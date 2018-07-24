@@ -1,0 +1,29 @@
+<?php
+use PHPUnit\Framework\TestCase;
+class MyProceduralTest extends TestCase {
+	
+	/*
+	 * Testing the Suffix of extention
+	 */
+	public function CheckingWrongInput(){
+		include('login.php'); // must include if tests are for non OOP code
+		$result = validateInput('dhdhdhdhd' , 4);
+		$this->assertEqulas(4, $result);
+	}
+	public function CheckingSizeOfInput(){
+		include('login.php'); // must include if tests are for non OOP code
+		$result = validateInput('bobby', 10);
+		$this->assertGreaterThan(10, $result)
+	}
+	public function testUserError(){
+		include('login.php'); // must include if tests are for non OOP code
+		$result = validateInput('user', 0);
+		$this->assertEquals(0, $result)
+	}
+	public function testPassword(){
+		include('login.php'); // must include if tests are for non OOP code
+		$result =validateInput('password', 3);
+		$this->$this->assertEquals(3, $result)
+	}
+}
+?>
